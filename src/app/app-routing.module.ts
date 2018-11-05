@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+import { RegistrateComponent } from './components/registrate/registrate.component';
+
+const routes: Routes = [
+  { path:'registrate', component: RegistrateComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
