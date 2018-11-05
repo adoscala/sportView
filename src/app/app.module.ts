@@ -7,11 +7,12 @@ import { RegistrateComponent } from './components/registrate/registrate.componen
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent, 
-    RegistrateComponent
+    RegistrateComponent, LoginComponent
   ],
   imports: [
     BrowserModule,
