@@ -6,17 +6,19 @@ import { AppComponent } from './app.component';
 import { RegistrateComponent } from './components/registrate/registrate.component';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent, 
     RegistrateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatInputModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
