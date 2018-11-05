@@ -1,3 +1,24 @@
-<p>
-  login works!
-</p>
+<div class="dimension-login">
+  
+    <form class="example-form">
+      <p id="titulo-login">Login</p>
+      <table class="example-full-width-table" cellspacing="0"><tr>
+        <td><mat-form-field class="example-full-width">
+         <input matInput placeholder="Nombre">
+        </mat-form-field></td>
+      </tr></table>
+      
+      <p>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Contraseña" [type]="hide ? 'password' : 'text'">
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </mat-form-field>
+      </p>
+
+      <div class="example-button-row">
+        <button mat-raised-button>Ingresar</button>
+      </div>
+  
+    </form>
+  </div>
+  
