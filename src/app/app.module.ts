@@ -13,6 +13,7 @@ import { LoginComponent } from './components/login/login.component';
 import { MatIconModule } from '@angular/material/icon';
 import { ReservaComponent } from './components/reserva/reserva.component';
 import { AgmCoreModule } from '@agm/core';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { AgmCoreModule } from '@agm/core';
     MatIconModule,
     AgmCoreModule.forRoot({
         apiKey: 'AIzaSyD5KhtMiH4v4aHXS-SfYTNjMAzSLcu3Jz8'
-    })
+    }),
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
