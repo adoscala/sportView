@@ -11,6 +11,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { LoginComponent } from './components/login/login.component';
 import { MatIconModule } from '@angular/material/icon';
+import { ReservaComponent } from './components/reserva/reserva.component';
+import { AgmCoreModule } from '@agm/core';
 
 
 @NgModule({
@@ -19,7 +21,8 @@ import { MatIconModule } from '@angular/material/icon';
     RegistrateComponent,
     LoginComponent,
     InicioComponent,
-    NavbarComponent
+    NavbarComponent,
+    ReservaComponent
 
   ],
   imports: [
@@ -28,7 +31,10 @@ import { MatIconModule } from '@angular/material/icon';
     MatInputModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    AgmCoreModule.forRoot({
+        apiKey: 'AIzaSyD5KhtMiH4v4aHXS-SfYTNjMAzSLcu3Jz8'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
