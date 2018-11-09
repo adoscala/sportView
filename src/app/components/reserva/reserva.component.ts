@@ -54,7 +54,7 @@ export class ReservaComponent implements OnInit {
     
     var inputDeporte = document.getElementById("inputDeporte");
     var inputPasto = document.getElementById("inputPasto").innerText;
-    var inputLuz = document.getElementById("inputLuz");
+    var inputLuz = document.getElementById("inputLuz").innerHTML.split('<option _ngcontent-c2="">')[1].split('</option>')[0];
 
     console.log(inputDeporte)
     console.log(inputPasto)
