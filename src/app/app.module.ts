@@ -14,6 +14,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { ReservaComponent } from './components/reserva/reserva.component';
 import { AgmCoreModule } from '@agm/core';
 import { MatCardModule } from '@angular/material/card';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { MatCardModule } from '@angular/material/card';
     AgmCoreModule.forRoot({
         apiKey: 'AIzaSyD5KhtMiH4v4aHXS-SfYTNjMAzSLcu3Jz8'
     }),
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
