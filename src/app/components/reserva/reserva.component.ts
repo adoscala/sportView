@@ -52,8 +52,8 @@ export class ReservaComponent implements OnInit {
 
   filtrarCanchas() {
     
-    var inputDeporte = document.getElementById("inputDeporte");
-    var inputPasto = document.getElementById("inputPasto").innerText;
+    var inputDeporte = document.getElementById("inputDeporte").innerHTML;
+    var inputPasto = document.getElementById("inputPasto").innerHTML.split('<option _ngcontent-c2="">')[1].split('</option>')[0];
     var inputLuz = document.getElementById("inputLuz").innerHTML.split('<option _ngcontent-c2="">')[1].split('</option>')[0];
 
     console.log(inputDeporte)
