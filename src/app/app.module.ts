@@ -15,6 +15,7 @@ import { ReservaComponent } from './components/reserva/reserva.component';
 import { AgmCoreModule } from '@agm/core';
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { HttpClientModule } from '@angular/common/http';
         apiKey: 'AIzaSyD5KhtMiH4v4aHXS-SfYTNjMAzSLcu3Jz8'
     }),
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

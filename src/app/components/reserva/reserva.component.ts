@@ -32,16 +32,15 @@ export class ReservaComponent implements OnInit {
   }
   ]
 
+  inputDeporte: string;
+  inputPasto: string;
+  inputLuz: string;
+
+
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    this.getMarkers();
-    var inputDeporte = document.getElementById("inputDeporte")
-    console.log(inputDeporte)
-    inputDeporte.addEventListener('onchange', () => {
-      console.log("as")
-      console.log(inputDeporte)
-    })
+    //this.getMarkers();
   }
 
   getMarkers() {
@@ -52,9 +51,16 @@ export class ReservaComponent implements OnInit {
   }
 
   filtrarCanchas() {
-    console.log(4);
-  }
+    
+    var inputDeporte = document.getElementById("inputDeporte");
+    var inputPasto = document.getElementById("inputPasto").innerText;
+    var inputLuz = document.getElementById("inputLuz");
 
+    console.log(inputDeporte)
+    console.log(inputPasto)
+    console.log(inputLuz)
+
+  }
 
   
 }
