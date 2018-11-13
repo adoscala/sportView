@@ -10,7 +10,6 @@ export class DataService {
   
   constructor(private http: HttpClient ) { }
 
-
   getMarkers() {
     return this.http.get(this.ROOTURL+"canchas");
   }
