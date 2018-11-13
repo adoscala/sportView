@@ -17,6 +17,7 @@ import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ReservarComponent } from './components/reserva/reservar/reservar.component';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { ReservarComponent } from './components/reserva/reservar/reservar.compon
     }),
     MatCardModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

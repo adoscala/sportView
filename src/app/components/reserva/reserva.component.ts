@@ -37,7 +37,7 @@ export class ReservaComponent implements OnInit {
   constructor(private dataService: DataService) {
   }
 
-  ngOnInit() {
+  ngOnInit() {    
     this.getMarkers();
   }
 
