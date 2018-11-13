@@ -40,3 +40,13 @@ agm-map {
     margin-top: 10px;
     font-family: 'Slabo 27px', serif;
 }
+
+#foto-mini{
+    height: 200px;
+    width: 350px;
+    margin-left: 18px;
+}
+
+#descripcion-mini{
+    margin-left: 18px;
+}
