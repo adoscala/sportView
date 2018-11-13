@@ -45,8 +45,8 @@
               <mat-card-subtitle *ngIf="i==0">Fútbol 5 y 7</mat-card-subtitle>
               <mat-card-subtitle *ngIf="i==1">Fútbol 5 y Basquetbol</mat-card-subtitle>
             </mat-card-header>
-            <img mat-card-image src="{{marker.foto}}">
-            <mat-card-content>
+            <img mat-card-image id="foto-mini" src="{{marker.foto}}">
+            <mat-card-content id="descripcion-mini">
               <p>
                 {{ marker.descripcion }}
               </p>
