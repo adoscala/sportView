@@ -12,10 +12,11 @@ export class ReservaComponent implements OnInit {
   lat: number = -34.8;
   lng: number = -56.16;
   zoom: number = 10;
-  tipos: Object = [{tipo: "Fútbol 5", bd: "5"},{tipo: "Fútbol 7", bd: "7"},{tipo: "Basketball", bd: "B"}];
-  luces: Object = [{tipo: "Con luces", bd: 1},{tipo: "Sin luces", bd: 0}];
-  pastos: Object = [{tipo: "Artificial", bd: 1},{tipo: "Natural", bd: 0}];
-  markerFiltrados: Object = [
+  tipos: any[] = [{tipo: "Fútbol 5", bd: "5"},{tipo: "Fútbol 7", bd: "7"},{tipo: "Basquetbol", bd: "B"}];
+  luces: any[] = [{tipo: "Con luces", bd: 1},{tipo: "Sin luces", bd: 0}];
+  pastos: any[] = [{tipo: "Artificial", bd: 1},{tipo: "Natural", bd: 0}];
+  
+  markersFiltrados: any[] = [
     {
       nombre: "El galpón",
       coords: "-34.2, -56.3",
@@ -24,7 +25,7 @@ export class ReservaComponent implements OnInit {
     }
   ];
 
-  markers: Object = [{
+  markers: any = [{
     id: 1,
     nombre: "El galpón",
     coords: "-34.2, -56.3",
@@ -33,35 +34,38 @@ export class ReservaComponent implements OnInit {
   }
   ]
 
-  inputDeporte: string;
-  inputPasto: string;
-  inputLuz: string;
-
-
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService) {
+  }
 
   ngOnInit() {
-    //this.getMarkers();
+    this.getMarkers();
   }
 
   getMarkers() {
     this.dataService.getMarkers().subscribe( res => {
       console.log(res);
       this.markers = res;
+      this.markersFiltrados = this.markers;
+
     });
   }
 
   filtrarCanchas() {
-    
-    var inputDeporte = document.getElementById("inputDeporte").innerHTML;
-    var inputPasto = document.getElementById("inputPasto").innerHTML.split('<option _ngcontent-c2="">')[1].split('</option>')[0];
-    var inputLuz = document.getElementById("inputLuz").innerHTML.split('<option _ngcontent-c2="">')[1].split('</option>')[0];
+    this.markersFiltrados = this.markers;
 
-    console.log(inputDeporte)
-    console.log(inputPasto)
-    console.log(inputLuz)
+    let deporteSelected = document.getElementById("inputDeporte") as HTMLInputElement;
+    let pastoSelected = document.getElementById("inputPasto") as HTMLInputElement;
+    let luzSelected = document.getElementById("inputLuz") as HTMLInputElement;    
 
+    if (deporteSelected.value != "-1") {
+      this.markersFiltrados = this.markersFiltrados.filter( marker => marker.tipo.includes(deporteSelected.value));
+    }
+    if (pastoSelected.value != "-1") {
+      this.markersFiltrados = this.markersFiltrados.filter( marker => marker.pasto == pastoSelected.value);
+    }
+    if (luzSelected.value != "-1") {
+      this.markersFiltrados = this.markersFiltrados.filter( marker => marker.luces == luzSelected.value); 
+    }
   }
-
   
 }

@@ -10,24 +10,24 @@
     <div class="col-md-2 pt-3">
       <div class="form-group">
         <select id="inputDeporte" class="form-control" (change)="filtrarCanchas()">
-          <option selected>Deporte</option>
-          <option *ngFor="let tipo of tipos; let i = index">{{tipo.tipo}}</option>
+          <option selected value="-1">Deporte</option>
+          <option *ngFor="let tipo of tipos; let i = index" [value]="tipo?.bd">{{tipo.tipo}}</option>
         </select>
       </div>
     </div>
     <div class="col-md-2 pt-3">
       <div class="form-group">
         <select id="inputPasto" class="form-control" (change)="filtrarCanchas()">
-          <option selected>Pasto</option>
-          <option *ngFor="let pasto of pastos; let i = index">{{pasto.tipo}}</option>
+          <option selected value="-1">Pasto</option>
+          <option *ngFor="let pasto of pastos; let i = index" [value]="pasto?.bd">{{pasto.tipo}}</option>
         </select>
       </div>
     </div>
     <div class="col-md-2 pt-3">
       <div class="form-group">
         <select id="inputLuz" class="form-control" (change)="filtrarCanchas()">
-          <option selected>Iluminación</option>
-          <option *ngFor="let luz of luces; let i = index">{{luz.tipo}}</option>
+          <option selected value="-1">Iluminación</option>
+          <option *ngFor="let luz of luces; let i = index" [value]="luz?.bd">{{luz.tipo}}</option>
         </select>
       </div>
     </div>
@@ -36,21 +36,19 @@
 
 <div id="contenedor-mapa">
   <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
-    <agm-marker *ngFor="let marker of markers; let i = index" [latitude]="marker.coords.split(', ')[0]" [longitude]="marker.coords.split(', ')[1]">
+    <agm-marker *ngFor="let marker of markersFiltrados; let i = index" [latitude]="marker.coords.split(', ')[0]" [longitude]="marker.coords.split(', ')[1]">
       <agm-info-window>
         <div id="contenedor-cancha">
           <mat-card class="example-card">
             <mat-card-header>
               <mat-card-title>{{marker.nombre}}</mat-card-title>
-              <mat-card-subtitle>Fútbol 5 y 7</mat-card-subtitle>
+              <mat-card-subtitle *ngIf="i==0">Fútbol 5 y 7</mat-card-subtitle>
+              <mat-card-subtitle *ngIf="i==1">Fútbol 5 y Basquetbol</mat-card-subtitle>
             </mat-card-header>
-            <img mat-card-image src="https://i.fcrmedia.com/paginasamarillas.uy/foto/thumb-920x620/000/014/025/14025762_el_galp_n_photo.jpg"
-              alt="Photo of a Shiba Inu">
+            <img mat-card-image src="{{marker.foto}}">
             <mat-card-content>
               <p>
-                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                bred for hunting.
+                {{ marker.descripcion }}
               </p>
             </mat-card-content>
             <mat-card-actions>
