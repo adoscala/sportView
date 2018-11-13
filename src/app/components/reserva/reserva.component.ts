@@ -57,7 +57,14 @@ export class ReservaComponent implements OnInit {
     let pastoSelected = document.getElementById("inputPasto") as HTMLInputElement;
     let luzSelected = document.getElementById("inputLuz") as HTMLInputElement;    
 
-    if (deporteSelected.value != "-1") {
+    if (deporteSelected.value == "B") {
+      pastoSelected.value = "-1";
+      pastoSelected.setAttribute("disabled", "true");
+    } else {
+      pastoSelected.removeAttribute("disabled");
+    }    
+    
+    if (deporteSelected.value != "-1") { 
       this.markersFiltrados = this.markersFiltrados.filter( marker => marker.tipo.includes(deporteSelected.value));
     }
     if (pastoSelected.value != "-1") {
