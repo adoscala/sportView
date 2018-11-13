@@ -13,6 +13,10 @@ export class ReservarComponent implements OnInit {
   markers: any = [];
   marker: Object;
 
+  lat: number = -34.8;
+  lng: number = -56.16;
+  zoom: number = 10;
+
   constructor(private dataService: DataService, private route: ActivatedRoute) { }
 
   ngOnInit() {

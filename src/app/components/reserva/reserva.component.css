@@ -50,3 +50,12 @@ agm-map {
 #descripcion-mini{
     margin-left: 18px;
 }
+
+#boton-reservar{
+    float: right;
+    margin-left: 110px;
+}
+
+.subtitulo-mini{
+    width: 140px;
+}

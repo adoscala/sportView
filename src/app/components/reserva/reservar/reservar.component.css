@@ -17,9 +17,40 @@ mat-grid-tile:hover {
 }
 
 #foto-cancha-contenedor{
-    height: 400px;
+    height: 200px;
+    margin-top: 5px;
 }
 
 #foto-cancha{
     height: 400px;
+    width: 50%;
+    margin-left: 16px;
 }
+
+#contenedor-descripcion{
+    margin-left: 16px;
+    width: 50%;
+}
+
+#nombre-cancha{
+    font-size: 40px;
+}
+
+#subtitulo-cancha{
+    font-size: 20px;
+}
+
+agm-map {
+    height: 100%;
+    width: 100%;
+}
+
+#contenedor-mapa{
+    height: 30%;
+    width: 40%;
+    margin-right: 20px;
+    margin-top: 30px;
+    float: right;
+}
+
+

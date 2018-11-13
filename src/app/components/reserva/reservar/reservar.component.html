@@ -1,22 +1,36 @@
-  <div id="contenedor-cancha">
-    <mat-card class="example-card">
-      <mat-card-header>
-        <mat-card-title>{{marker?.nombre}}</mat-card-title>
-        <mat-card-subtitle>Fútbol 5 y 7</mat-card-subtitle>
-      </mat-card-header>
-      <div id="foto-cancha-contenedor">
-        <img mat-card-image id="foto-cancha" src="{{marker?.foto}}"
-          alt="Photo of a Shiba Inu">
+<mat-card class="example-card">
+ <div id="contenedor-cancha" class="container">
+   <div class="row">
+     <div class="col-sm">
+        
+            <mat-card-header>
+              <mat-card-title id="nombre-cancha" class="slabo">{{marker?.nombre}}</mat-card-title>
+              <mat-card-subtitle id="subtitulo-cancha">Fútbol 5 y 7</mat-card-subtitle>
+            </mat-card-header>
+            <div id="foto-cancha-contenedor">
+              <img mat-card-image id="foto-cancha" src="{{marker?.foto}}"
+                alt="Photo of a Shiba Inu">
+            </div>
+            <mat-card-content>
+              <p id="contenedor-descripcion">
+                {{marker?.descripcion}}
+              </p>
+            </mat-card-content>
+      
+            <mat-card-actions>
+            </mat-card-actions>
+     </div>
+     <div class="col-sm">
+        <div id="contenedor-mapa">
+            <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+              <agm-marker [latitude]="marker.coords.split(', ')[0]" [longitude]="marker.coords.split(', ')[1]">
+              </agm-marker>
+            </agm-map>
+          </div> 
       </div>
-      <mat-card-content>
-        <p>
-          {{marker?.descripcion}}
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-      </mat-card-actions>
-    </mat-card>
-  </div>
+   </div>
+</div>
+</mat-card>
 
 <div id="contenedor-tabla">
   <mat-grid-list cols="7" rowHeight="30px">
@@ -137,3 +151,4 @@
     <mat-grid-tile>7</mat-grid-tile>
   </mat-grid-list>
 </div>
+
