@@ -1,0 +1,25 @@
+mat-grid-tile {
+    background: lightblue;
+}
+
+mat-grid-tile:hover {
+    background: green;
+}
+
+#contenedor-tabla{
+    width: 50%;
+    height: 50px;
+    margin-left: 25%;
+}
+
+.dias:hover{
+    background: lightblue;
+}
+
+#foto-cancha-contenedor{
+    height: 400px;
+}
+
+#foto-cancha{
+    height: 400px;
+}

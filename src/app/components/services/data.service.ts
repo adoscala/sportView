@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DataService {
 
-  private ROOTURL: string = "http://192.168.43.79:8080/api/"  
+  private ROOTURL: string = "http://10.252.254.120:3000/api/"  
   
   constructor(private http: HttpClient ) { }
 
